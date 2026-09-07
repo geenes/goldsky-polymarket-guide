@@ -1,0 +1,14 @@
+# Review the dataset and project costs before deploying. This file is not deployed.
+name: polymarket-live-review
+resource_size: s
+sources:
+  fills:
+    type: dataset
+    dataset_name: polymarket.order_filled
+    version: 2.0.0
+    start_at: latest
+transforms: {}
+sinks:
+  review:
+    type: blackhole
+    from: fills
